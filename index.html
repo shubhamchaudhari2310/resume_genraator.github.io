@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="./stye.css">
+
+    <title>Resume Generator</title>
+</head>
+
+<body>
+
+
+    <div class="container" id="cv-form">
+        <h1 class="text-center my-2">Resume Generator</h1>
+        <p class="text-center">By Shubham Chaudhari</p>
+        <div class="row">
+
+            <div class="col-md-6">
+                <h3>Personal information</h3>
+
+                <div class="form-group mt-3">
+                    <label for="nameField">Your Name</label>
+                    <input type="text" class="form-control" id="nameField" placeholder="Enter here...">
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="contctField">Your Contact</label>
+                    <input type="text" class="form-control" id="contctField" placeholder="Enter here...">
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="adreeField">Your Address</label>
+                    <textarea name="" type="text" class="form-control" id="adreeField" rows="5"
+                        placeholder="Enter here..."></textarea>
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="">Select your photo</label>
+                    <input type="file" id="imgField" class="form-control">
+                </div>
+
+                <p class="text-secondary my-2">Important Links...</p>
+
+                <div class="form-group mt-2">
+                    <label for="linkdInField">LinkdIn</label>
+                    <input type="text" class="form-control" id="linkdInField" placeholder="linkes...">
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="gitHubField">GitHub</label>
+                    <input type="text" class="form-control" id="gitHubField" placeholder="linkes...">
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="instaField">Instagram</label>
+                    <input type="text" class="form-control" id="instaField" placeholder="linkes...">
+                </div>
+
+
+            </div>
+
+            <div class="col-md-6">
+                <h3>Professional information</h3>
+
+
+                <div class="form-group mt-2">
+                    <label for="">Objective</label>
+                    <textarea name="" type="text" id="objectField" class="form-control" rows="5"
+                        placeholder="Enter here..."></textarea>
+                </div>
+
+                <div class="form-group mt-2" id="workExpri">
+                    <label for="">Work Experience</label>
+                    <textarea name="" type="text" class="form-control wkExpeField" rows="3"
+                        placeholder="Enter here experience..."></textarea>
+
+                    <div class="container text-center mt-2 " id="workExperAddBtn">
+                        <button class="btn btn-dark btn-sm" onclick="addNewExperField()">Add</button>
+                    </div>
+                </div>
+
+                <div class="form-group mt-2" id="acdamicQul">
+                    <label for="">Academic Qualification</label>
+                    <textarea name="" type="text" class="form-control qualiField" rows="3"
+                        placeholder="Enter here Qulification..."></textarea>
+
+                    <div class="container text-center mt-2" id="qualiAddBtn">
+                        <button class="btn btn-dark btn-sm" onclick="addNewQuliField()">Add</button>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="container text-center mt-3">
+            <button onclick="generateCV()" class="btn btn-primary btn-lg">Generate Resume</button>
+        </div>
+    </div>
+
+    <!-- ********************************************** -->
+    <!-- CV Template Start-->
+    <div class="container" id="cv-template">
+
+        <div class="row">
+            <div class="col-md-4 text-center py-5 background">
+                <!-- first Column -->
+                <img src="./img/istockphoto-476085198-612x612.jpg" alt="" id="imgTemplate" class="img-fluid myimage">
+
+                <div class="container">
+                    <p id="nameT1">Shubham Sunil Chaudhari</p>
+                    <p id="contactT">+912346789015</p>
+                    <p id="addressT">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate id modi nostrum
+                        qui dolore,
+                        dolorum sint exercitationem incidunt, vero aliquid quam non. Laborum sunt, obcaecati repellendus
+                        veritatis animi maiores alias.</p>
+                </div>
+                <hr>
+
+                <p>
+                    <a id="linkedT" href="#">https://www.linkedin.com</a>
+                </p>
+                <p>
+                    <a id="githubT" href="#">https://www.github.com</a>
+                </p>
+                <p>
+                    <a id="instaT" href="#">https://www.instagram.com</a>
+                </p>
+
+            </div>
+
+            <div class="col-md-8 py-5">
+                <!-- Second Column -->
+                <h1 id="nameT2" class="text--center" style="font-weight:980">Shubham Chaudhari</h1>
+
+                <!-- Objective Card -->
+                <div class="card">
+                    <div class="card-header background">
+                        <h3>objective</h3>
+                    </div>
+
+                    <div class="card-body ">
+                        <p id="objeCardTpara">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis facere
+                            excepturi atque quia
+                            laboriosam dignissimos.</p>
+                    </div>
+                </div>
+
+                <!-- Work Experience -->
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Work Experience</h3>
+                    </div>
+
+                    <div class="card-body ">
+                        <ul id="workWxpCardTUl">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, beatae!</li>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                        </ul>
+
+                    </div>
+                </div>
+
+
+                <!-- Academic Qulification -->
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Academic Qulification</h3>
+                    </div>
+
+                    <div class="card-body ">
+                        <ul id="acdQuliCardTUl">
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, beatae!</li>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="container mt-3 text-center">
+                    <button onclick="printCV()" class="btn background">print CV</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- CV Template End-->
+    <!-- ****************************** -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
